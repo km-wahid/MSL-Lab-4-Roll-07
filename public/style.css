@@ -1,0 +1,56 @@
+.post-card {
+    width: 500px;
+
+    background-color: rgb(13, 13, 47);
+    border: none;
+    border-radius: 16px;
+    margin-bottom: 20px;
+    padding: 20px;
+    transition: all 0.5s;
+}
+.post-card:hover{
+    background-color: rgb(48, 48, 90);
+
+}
+
+.heading {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+}
+
+.heading h4 {
+    color: white;
+    border: none;
+    border-radius: 7px;
+    background-color: blueviolet;
+}
+
+.heading p {
+    text-align: center;
+    width: 40px;
+    color: white;
+    border: none;
+    border-radius: 7px;
+    background-color: rgb(120, 118, 118);
+
+}
+
+body {
+    justify-items: center;
+    background-color: rgb(7, 7, 28);
+    color: white;
+
+}
+#post{
+    font-family: "Roboto", sans-serif;
+    line-height: 20px;
+    color: rgb(150, 148, 146);
+    line-height: 20px;
+
+}
+.post-card h2 {
+    font-family: "Libre Caslon Condensed", serif;
+    color: white;
+
+}
