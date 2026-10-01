@@ -1,20 +1,73 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Posts</title>
-    <link rel="stylesheet" href="./style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Condensed:ital,wght@0,400..700;1,400..700&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-</head>
-<body>
-    <h1>Posts Showing via REST API</h1>
-    <div id="div">
-        
-    </div>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Browse and search community stories fetched from a public REST API." />
+    <title>Postly — Community stories</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="#">Postly<span>.</span></a>
+      <div class="api-status"><span aria-hidden="true"></span> Live API</div>
+    </header>
 
-    <script type="module" src="first.js"></script>
-</body>
+    <main>
+      <section class="hero" aria-labelledby="page-title">
+        <p class="eyebrow">Ideas worth sharing</p>
+        <h1 id="page-title">Stories from<br />across the wire.</h1>
+        <p class="hero-copy">A living collection of thoughts, notes, and observations from our community—delivered straight from the API.</p>
+        <a class="explore-link" href="#stories">Explore stories <span>↓</span></a>
+      </section>
+
+      <section class="stories" id="stories" aria-labelledby="stories-title">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">The latest</p>
+            <h2 id="stories-title">Community notes</h2>
+          </div>
+          <p id="result-count" class="result-count" aria-live="polite"></p>
+        </div>
+
+        <div class="controls">
+          <label class="search-field">
+            <span class="sr-only">Search stories</span>
+            <svg aria-hidden="true" viewBox="0 0 24 24"><path d="m21 21-4.35-4.35m2.35-5.65a8 8 0 1 1-16 0 8 8 0 0 1 16 0Z" /></svg>
+            <input id="search" type="search" placeholder="Search stories..." autocomplete="off" />
+          </label>
+          <label class="select-field">
+            <span class="sr-only">Filter by author</span>
+            <select id="author-filter"><option value="all">All authors</option></select>
+          </label>
+        </div>
+
+        <p id="message" class="message" role="status"></p>
+        <div id="post-grid" class="post-grid" aria-busy="true">
+          <div class="skeleton"></div>
+          <div class="skeleton"></div>
+          <div class="skeleton"></div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <a class="brand" href="#">Postly<span>.</span></a>
+      <p>Built with the JSONPlaceholder REST API.</p>
+    </footer>
+
+    <template id="post-template">
+      <article class="post-card">
+        <div class="card-meta"><span class="author"></span><span class="post-number"></span></div>
+        <h3></h3>
+        <p class="post-body"></p>
+        <span class="read-more" aria-hidden="true">Read story <b>↗</b></span>
+      </article>
+    </template>
+
+    <script src="app.js"></script>
+  </body>
 </html>

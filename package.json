@@ -1,16 +1,19 @@
 {
-  "name": "nodejs",
+  "name": "postly",
   "version": "1.0.0",
-  "description": "",
+  "description": "A responsive post browser powered by JSONPlaceholder.",
   "license": "ISC",
   "type": "commonjs",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node index.js",
+    "dev": "node node_modules/nodemon/bin/nodemon.js index.js",
+    "test": "node --check index.js && node --check public/app.js"
   },
   "dependencies": {
-    "cors": "^2.8.6",
-    "express": "^5.2.1",
+    "express": "^5.2.1"
+  },
+  "devDependencies": {
     "nodemon": "^3.1.14"
   }
 }
